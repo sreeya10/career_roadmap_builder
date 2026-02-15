@@ -5,7 +5,7 @@ async function handleLogin(event) {
     const password = document.getElementById('loginPassword').value;
     
     try {
-        const data = await apiRequest('/auth/login', {
+        const data = await apiRequest('/api/auth/login', {
             method: 'POST',
             body: JSON.stringify({ email, password })
         });
@@ -28,7 +28,7 @@ async function handleSignup(event) {
     const password = document.getElementById('signupPassword').value;
     
     try {
-        const data = await apiRequest('/auth/signup', {
+        const data = await apiRequest('/api/auth/signup', {
             method: 'POST',
             body: JSON.stringify({ username, email, password })
         });
