@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:3000/api';
+const API_URL = 'https://career-roadmap-builder.onrender.com/api';
+
 let sessionStartTime = Date.now();
 let timeTrackingInterval;
 
