@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Quiz - Career Roadmap Builder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">📚 CareerPath</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="quiz.html" class="active">Quiz</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="group.html">Groups</a></li>
+                <li id="authButton"><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="quiz-section">
+        <div class="quiz-container">
+            <h1 class="section-title">Find Your Ideal Career</h1>
+            <p class="section-subtitle">Answer these questions to discover your perfect career path</p>
+
+            <div class="quiz-form" id="quizForm">
+                <div class="quiz-question">
+                    <h3>What type of work excites you most?</h3>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="webdev">
+                            <span>Building websites and web applications</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="ai">
+                            <span>Working with AI, machine learning, and data</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="cloud">
+                            <span>Cloud infrastructure and DevOps</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="security">
+                            <span>Cybersecurity and ethical hacking</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="design">
+                            <span>UI/UX design and creative work</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="data">
+                            <span>Data analysis and business intelligence</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="game">
+                            <span>Game development and interactive experiences</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="emerging">
+                            <span>Blockchain, AR/VR, and emerging technologies</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="systems">
+                            <span>Systems, networks, and hardware</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <h3>Which skill do you want to develop?</h3>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="coding">
+                            <span>Programming and software development</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="design">
+                            <span>Design and user experience</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="analysis">
+                            <span>Data analysis and problem-solving</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="technical">
+                            <span>Technical infrastructure and systems</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <h3>What work environment suits you?</h3>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="remote">
+                            <span>Remote work with flexible hours</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="office">
+                            <span>Office setting with team collaboration</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="field">
+                            <span>On-site and hands-on work</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="hybrid">
+                            <span>Mix of different environments</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <h3>What motivates you most?</h3>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q4" value="innovation">
+                            <span>Creating innovative solutions</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q4" value="helping">
+                            <span>Helping people and making impact</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q4" value="growth">
+                            <span>Career growth and earnings</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q4" value="learning">
+                            <span>Continuous learning and challenges</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <h3>Which best describes your interests?</h3>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q5" value="logical">
+                            <span>Logic, algorithms, and problem-solving</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q5" value="artistic">
+                            <span>Art, aesthetics, and user experience</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q5" value="strategic">
+                            <span>Strategy, planning, and optimization</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q5" value="technical">
+                            <span>Technical systems and infrastructure</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-primary quiz-submit" onclick="submitQuiz()">Get My Career Match</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="quiz.js"></script>
+</body>
+</html>

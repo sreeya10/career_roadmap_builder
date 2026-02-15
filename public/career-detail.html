@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Details - Career Roadmap Builder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">📚 CareerPath</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="group.html">Groups</a></li>
+                <li id="authButton"><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="career-detail-section">
+        <div class="career-detail-container">
+            <div class="career-header">
+                <button class="back-btn" onclick="window.location.href='careers.html'">← Back to Careers</button>
+                <h1 id="careerTitle"></h1>
+                <button class="save-career-btn" id="saveCareerBtn">Save to Profile</button>
+            </div>
+
+            <div class="progress-overview" id="progressOverview" style="display:none;">
+                <div class="progress-card">
+                    <h3>Your Progress</h3>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="overallProgress"></div>
+                    </div>
+                    <p id="progressText">0% Complete</p>
+                </div>
+            </div>
+
+            <div class="roadmap-section">
+                <h2>🎯 Essential Skills</h2>
+                <div class="roadmap-grid" id="skillsGrid"></div>
+            </div>
+
+            <div class="roadmap-section">
+                <h2>💼 Projects to Build</h2>
+                <div class="roadmap-grid" id="projectsGrid"></div>
+            </div>
+
+            <div class="roadmap-section">
+                <h2>🛠️ Tools & Technologies</h2>
+                <div class="tools-list" id="toolsList"></div>
+            </div>
+
+            <div class="roadmap-section">
+                <h2>📚 Learning Roadmap</h2>
+                <div class="learning-path" id="learningPath"></div>
+            </div>
+
+            <div class="roadmap-section">
+                <h2>🚀 Career Growth Path</h2>
+                <div class="career-path" id="careerPath"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="careers-data.js"></script>
+    <script src="career-detail.js"></script>
+</body>
+</html>

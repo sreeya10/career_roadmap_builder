@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Career Roadmap Builder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">📚 CareerPath</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="careers.html" class="active">Careers</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="group.html">Groups</a></li>
+                <li id="authButton"><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="careers-section">
+        <div class="careers-container">
+            <h1 class="section-title">Explore Career Paths</h1>
+            <p class="section-subtitle">Choose your path and start building your future</p>
+            
+            <div class="search-container">
+                <input type="text" id="careerSearch" placeholder="Search careers..." class="search-input">
+            </div>
+
+            <div class="careers-grid" id="careersGrid"></div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="careers-data.js"></script>
+    <script>
+        const careers = [
+            { name: 'Frontend Developer', icon: '💻', category: 'Web & App Development' },
+            { name: 'Backend Developer', icon: '⚙️', category: 'Web & App Development' },
+            { name: 'Full Stack Developer', icon: '🔄', category: 'Web & App Development' },
+            { name: 'Mobile App Developer', icon: '📱', category: 'Web & App Development' },
+            { name: 'React Developer', icon: '⚛️', category: 'Web & App Development' },
+            { name: 'Angular Developer', icon: '🅰️', category: 'Web & App Development' },
+            { name: 'Vue.js Developer', icon: '💚', category: 'Web & App Development' },
+            { name: 'Node.js Developer', icon: '🟢', category: 'Web & App Development' },
+            { name: 'WordPress Developer', icon: '📝', category: 'Web & App Development' },
+            
+            { name: 'Machine Learning Engineer', icon: '🤖', category: 'AI & Data' },
+            { name: 'AI Engineer', icon: '🧠', category: 'AI & Data' },
+            { name: 'Data Scientist', icon: '📊', category: 'AI & Data' },
+            { name: 'Data Engineer', icon: '🔧', category: 'AI & Data' },
+            { name: 'NLP Engineer', icon: '💬', category: 'AI & Data' },
+            { name: 'Computer Vision Engineer', icon: '👁️', category: 'AI & Data' },
+            { name: 'AI Research Scientist', icon: '🔬', category: 'AI & Data' },
+            
+            { name: 'Cloud Architect', icon: '☁️', category: 'Cloud & DevOps' },
+            { name: 'AWS Solutions Architect', icon: '🔶', category: 'Cloud & DevOps' },
+            { name: 'Azure Cloud Engineer', icon: '🔷', category: 'Cloud & DevOps' },
+            { name: 'DevOps Engineer', icon: '♾️', category: 'Cloud & DevOps' },
+            { name: 'Site Reliability Engineer', icon: '🛡️', category: 'Cloud & DevOps' },
+            { name: 'Kubernetes Engineer', icon: '☸️', category: 'Cloud & DevOps' },
+            { name: 'Cloud Security Engineer', icon: '🔐', category: 'Cloud & DevOps' },
+            
+            { name: 'Cybersecurity Analyst', icon: '🔒', category: 'Security & Testing' },
+            { name: 'Ethical Hacker', icon: '🎭', category: 'Security & Testing' },
+            { name: 'Penetration Tester', icon: '🛠️', category: 'Security & Testing' },
+            { name: 'Security Engineer', icon: '🔑', category: 'Security & Testing' },
+            { name: 'QA Engineer', icon: '✅', category: 'Security & Testing' },
+            { name: 'Test Automation Engineer', icon: '🤖', category: 'Security & Testing' },
+            { name: 'Security Architect', icon: '🏰', category: 'Security & Testing' },
+            
+            { name: 'UI/UX Designer', icon: '🎨', category: 'Design & Creative' },
+            { name: 'Product Designer', icon: '✏️', category: 'Design & Creative' },
+            { name: 'Graphic Designer', icon: '🖌️', category: 'Design & Creative' },
+            { name: 'Motion Graphics Designer', icon: '🎬', category: 'Design & Creative' },
+            { name: 'Web Designer', icon: '🌐', category: 'Design & Creative' },
+            { name: '3D Designer', icon: '🎲', category: 'Design & Creative' },
+            { name: 'UI Developer', icon: '💎', category: 'Design & Creative' },
+            
+            { name: 'Data Analyst', icon: '📈', category: 'Data & Analytics' },
+            { name: 'Business Intelligence Analyst', icon: '📊', category: 'Data & Analytics' },
+            { name: 'Database Administrator', icon: '🗄️', category: 'Data & Analytics' },
+            { name: 'Big Data Engineer', icon: '📉', category: 'Data & Analytics' },
+            { name: 'Analytics Engineer', icon: '🔍', category: 'Data & Analytics' },
+            { name: 'ETL Developer', icon: '🔄', category: 'Data & Analytics' },
+            
+            { name: 'Game Developer', icon: '🎮', category: 'Game & Emerging Tech' },
+            { name: 'Unity Developer', icon: '🎯', category: 'Game & Emerging Tech' },
+            { name: 'Unreal Engine Developer', icon: '🕹️', category: 'Game & Emerging Tech' },
+            { name: 'AR/VR Developer', icon: '🥽', category: 'Game & Emerging Tech' },
+            { name: 'Blockchain Developer', icon: '⛓️', category: 'Game & Emerging Tech' },
+            { name: 'Web3 Developer', icon: '🌐', category: 'Game & Emerging Tech' },
+            { name: 'IoT Engineer', icon: '📡', category: 'Game & Emerging Tech' },
+            
+            { name: 'Systems Engineer', icon: '🖥️', category: 'Systems & Hardware' },
+            { name: 'Network Engineer', icon: '🌐', category: 'Systems & Hardware' },
+            { name: 'Embedded Systems Engineer', icon: '🔧', category: 'Systems & Hardware' },
+            { name: 'Hardware Engineer', icon: '💾', category: 'Systems & Hardware' },
+            { name: 'Firmware Engineer', icon: '⚡', category: 'Systems & Hardware' },
+            { name: 'Systems Administrator', icon: '🔨', category: 'Systems & Hardware' },
+            { name: 'IT Support Specialist', icon: '🛠️', category: 'Systems & Hardware' }
+        ];
+
+        function renderCareers(careersToShow) {
+            const grid = document.getElementById('careersGrid');
+            grid.innerHTML = '';
+            
+            careersToShow.forEach(career => {
+                const card = document.createElement('div');
+                card.className = 'career-card';
+                card.innerHTML = `
+                    <div class="career-icon">${career.icon}</div>
+                    <h3 class="career-name">${career.name}</h3>
+                    <div class="career-category">${career.category}</div>
+                `;
+                card.onclick = () => {
+                    window.location.href = `career-detail.html?career=${encodeURIComponent(career.name)}`;
+                };
+                grid.appendChild(card);
+            });
+        }
+
+        renderCareers(careers);
+
+        document.getElementById('careerSearch').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filtered = careers.filter(career => 
+                career.name.toLowerCase().includes(searchTerm) ||
+                career.category.toLowerCase().includes(searchTerm)
+            );
+            renderCareers(filtered);
+        });
+    </script>
+</body>
+</html>

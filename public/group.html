@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Groups - Career Roadmap Builder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">📚 CareerPath</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="group.html" class="active">Groups</a></li>
+                <li id="authButton"><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="group-section">
+        <div class="group-container">
+            <h1 class="section-title">Study Groups</h1>
+            <p class="section-subtitle">Learn together, grow together</p>
+
+            <div class="group-actions">
+                <button class="btn btn-primary" onclick="showCreateGroupModal()">Create Group</button>
+                <button class="btn btn-secondary" onclick="showJoinGroupModal()">Join Group</button>
+            </div>
+
+            <div class="groups-list" id="groupsList"></div>
+
+            <div class="group-details" id="groupDetails" style="display:none;">
+                <button class="back-btn" onclick="hideGroupDetails()">← Back to Groups</button>
+                <h2 id="groupName"></h2>
+                <div class="invite-code-section">
+                    <p>Invite Code: <strong id="inviteCode"></strong></p>
+                    <button class="btn-small" onclick="copyInviteCode()">Copy</button>
+                </div>
+                
+                <div class="members-section">
+                    <h3>Members</h3>
+                    <div class="members-list" id="membersList"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal" id="createGroupModal">
+        <div class="modal-content">
+            <h2>Create Study Group</h2>
+            <form id="createGroupForm" onsubmit="createGroup(event)">
+                <div class="form-group">
+                    <label>Group Name</label>
+                    <input type="text" id="groupNameInput" required placeholder="e.g., Web Dev Warriors">
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" class="btn btn-secondary" onclick="hideCreateGroupModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="joinGroupModal">
+        <div class="modal-content">
+            <h2>Join Study Group</h2>
+            <form id="joinGroupForm" onsubmit="joinGroup(event)">
+                <div class="form-group">
+                    <label>Invite Code</label>
+                    <input type="text" id="joinInviteCode" required placeholder="Enter 6-character code">
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" class="btn btn-secondary" onclick="hideJoinGroupModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Join</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="group.js"></script>
+</body>
+</html>

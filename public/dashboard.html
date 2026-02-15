@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Career Roadmap Builder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">📚 CareerPath</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="group.html">Groups</a></li>
+                <li id="authButton"><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard-section">
+        <div class="dashboard-container">
+            <div class="dashboard-welcome">
+                <h1>Welcome back, <span id="usernameDisplay"></span>! 👋</h1>
+                <p>Keep up the great work on your learning journey</p>
+            </div>
+
+            <div class="streak-container">
+                <div class="streak-card">
+                    <div class="streak-icon">🔥</div>
+                    <div class="streak-info">
+                        <h3><span id="currentStreak">0</span> Day Streak</h3>
+                        <p>Keep learning daily!</p>
+                    </div>
+                </div>
+                <div class="streak-card">
+                    <div class="streak-icon">⭐</div>
+                    <div class="streak-info">
+                        <h3><span id="longestStreak">0</span> Days</h3>
+                        <p>Your longest streak</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-info">
+                        <h3 id="skillsCount">0</h3>
+                        <p>Skills Completed</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💼</div>
+                    <div class="stat-info">
+                        <h3 id="projectsCount">0</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-info">
+                        <h3 id="todayTime">0m</h3>
+                        <p>Time Today</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-info">
+                        <h3 id="weekTime">0h</h3>
+                        <p>This Week</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="primary-career-section" id="primaryCareerSection" style="display:none;">
+                <h2>Your Active Career Path</h2>
+                <div class="primary-career-card" id="primaryCareerCard"></div>
+            </div>
+
+            <div class="saved-careers-section">
+                <h2>Saved Careers</h2>
+                <div class="saved-careers-grid" id="savedCareersGrid"></div>
+            </div>
+
+            <div class="encouragement-section" id="encouragementSection" style="display:none;">
+                <div class="encouragement-card">
+                    <div class="encouragement-icon" id="encouragementIcon">🎯</div>
+                    <h3 id="encouragementTitle">Keep Going!</h3>
+                    <p id="encouragementMessage">You're making progress!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
